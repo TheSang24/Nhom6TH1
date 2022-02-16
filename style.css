@@ -1,97 +1,88 @@
 body{
-    margin: 0;
+    margin 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
+    font-family: sans-serif;
+
 }
-.slider{
-    width: 800px;
-    height: 500px;
-    border-radius: 10px;
+
+.container{
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    margin: 240px auto;
+
+}
+
+.container .box{
+    position : relative;
+    width: calc(400px - 30px);
+    height: calc(300px - 30px);
+    background: #ff0;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
     overflow: hidden;
-}
-.slides{
-    width: 500%;
-    height: 500px;
-    display: flex;
-}
+    border-radius: 10px;
 
-.slides input{
-    display: none;
 }
-.slide{
-    width: 20%;
-    transition: 2s;
-}
-
-.slide img{
-    width: 800px;
-    height: 500px;
-}
-/*manual slide navigation*/
-.navigation-manual{
+.contaier .box .con{
     position: absolute;
-    width: 800px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-}
-.manual-btn{
-    border: 3px solid red;
-    padding: 5px;
-    border-radius: 9px;
-    cursor: pointer;
-    transition: 1s;
+    top 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.5s;
+    z-index: 1;
 }
 
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-.manual-btn:hover{
-    background: blue;
-}
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-#radio2:checked ~ .first{
-    margin-left: -20px;
+.container .box:hover .icon{
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
-#radio3:checked ~ .first{
-    margin-left: -40px;
-}
-
-#radio4:checked ~ .first{
-    margin-left: -60px;
-}
-.navigation-auto{
+.container box .icon .fa{
     position: absolute;
-    display: flex;
-    width: 800px;
-    justify-content: center;
-    margin-top: 460px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #fff;
 }
-.navigation-auto div{
-    border: 3px solid red;
-    padding: 5px;
-    border-radius: 9px;
-    transition: 1s;
-}
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background: pink;
-}
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background: pink;
-}
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background: pink;
-}
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background: pink;
+.container .box:hover .icon .fa{
+    font-size: 40px;
 }
 
+.container .box .content{
+    position: absolute;
+    top: 100%;
+    height: calc(100% - 100px);
+    text-align; center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    opacity: 1;
+}
+.container .box .content h3{
+    margin: 0 0 10px;
+    padding: 0;
+    coler: #fff;
+}
+.container .box .content p{
+    margin 0;
+    padding: 0;
+    color: #fff;
+}
 
-
+.container .box:nth-child(1) .icon
+{
+    background: pink;
+}
+.container .box:nth-child(1)
+{
+    background: orange;
+}
